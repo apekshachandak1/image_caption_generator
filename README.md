@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Image Caption Generation using Deep Learning
 
 [![GitHub license](https://img.shields.io/github/license/Sajid030/image-caption-generator)](https://github.com/Sajid030/image-caption-generator/blob/master/LICENSE.md)
@@ -108,3 +109,6 @@ If you encounter any bugs or issues with the loan status predictor app, please l
 3. **Beam Search**: Implement beam search decoding for generating multiple captions and selecting the best one.
 4. **User Interface Enhancements**: Improve the Streamlit app's user interface and add features such as image previews and caption confidence scores.
 5. **Multilingual Captioning**: Extend the model to generate captions in multiple languages by incorporating multilingual datasets.
+=======
+# image_caption_generator
+>>>>>>> 0f68177a8edb85091033f6798ae530c3165976eb
