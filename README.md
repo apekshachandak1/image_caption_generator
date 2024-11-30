@@ -1,7 +1,6 @@
-<<<<<<< HEAD
-# Image Caption Generation using Deep Learning
+# **Image Caption Generator using Deep Learning**
 
-[![GitHub license](https://img.shields.io/github/license/Sajid030/image-caption-generator)](https://github.com/Sajid030/image-caption-generator/blob/master/LICENSE.md)
+[![GitHub license](https://img.shields.io/github/license/apekshachandak1/image_caption_generator)](https://github.com/apekshachandak1/image_caption_generator/blob/main/LICENSE)
 [![Python](https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![TensorFlow](https://img.shields.io/badge/-TensorFlow-FF6F00?logo=tensorflow&logoColor=white)](https://www.tensorflow.org/)
 ![Pandas](https://img.shields.io/badge/-Pandas-150458?logo=pandas&logoColor=white)
@@ -9,106 +8,143 @@
 ![Jupyter](https://img.shields.io/badge/-Jupyter-F37626?logo=jupyter&logoColor=white)
 [![Streamlit](https://img.shields.io/badge/-Streamlit-FF4B4B)](https://www.streamlit.io/)
 
-## Table of Contents
+---
+
+## **Table of Contents**
 
 - [Demo](#demo)
 - [Overview](#overview)
 - [About the Dataset](#about-the-dataset)
 - [Installation](#installation)
-- [Deployement on Streamlit](#deployement-on-streamlit)
+- [Deployment on Streamlit](#deployment-on-streamlit)
 - [Directory Tree](#directory-tree)
-- [Bug / Feature Request](#bug--feature-request)
 - [Future Scope](#future-scope)
+- [Author](#author)
 
-## Demo
+---
 
-- Link: https://imgcaptiongen.streamlit.app/
+## **Demo**
 
-`Note:` If the website link provided above is not working, it might mean that the deployment has been stopped or there are technical issues. We apologize for any inconvenience.
+- **App Link**: [Image Caption Generator](https://your-streamlit-app-link)
 
-- Please consider giving a ⭐ to the repository if you find this app useful.
-- A quick preview of the **Image Caption Generator** app:
+> **Note**: If the app link does not work, it may be offline or there may be technical issues. Apologies for any inconvenience.
 
-![Caption Generator Demo](resource/demo.gif)
+### **Quick Preview**
 
-## Overview
+![Image Caption Generator Demo](resource/demo.gif)
 
-This repository contains code for an image caption generation system using deep learning techniques. The system leverages a pretrained VGG16 model for feature extraction and a custom captioning model which was trained using LSTM for generating captions. The model is trained on the Flickr8k dataset using an attention mechanism to improve caption quality.
+---
 
-**Note:** While using the `VGG16` model for feature extraction provides accurate results, it's important to be mindful of memory usage. The VGG16 model can consume a significant amount of memory, potentially causing issues in resource-constrained environments. To address this, it's advised to consider using the `MobileNetV2` model for feature extraction. MobileNetV2 strikes a balance between memory efficiency and performance, making it a practical choice for scenarios with limited resources. Consequently, in my deployed app, I've opted for `MobileNetV2`.
+## **Overview**
 
-The key components of the project include:
+The **Image Caption Generator** is a deep learning-based project designed to automatically generate meaningful captions for images. The system employs **MobileNetV2** for efficient image feature extraction and a custom **LSTM-based architecture** with an attention mechanism for caption generation.
 
-- Image feature extraction using a pretrained VGG16 model (Consider using MobileNetV2 for memory efficiency)
-- Caption preprocessing and tokenization
-- Custom captioning model architecture with attention mechanism
-- Model training and evaluation
-- Streamlit app for interactive caption generation
+### **Key Features**
+- **Feature Extraction**: Leverages MobileNetV2 for memory-efficient image feature extraction.
+- **Caption Generation**: Implements a custom LSTM-based architecture with an attention mechanism for generating high-quality captions.
+- **Interactive App**: Deployed using Streamlit, allowing users to upload and caption images in real time.
 
-## About the Dataset
+---
 
-The [Flickr8k dataset](https://www.kaggle.com/adityajn105/flickr8k) is used for training and evaluating the image captioning system. It consists of 8,091 images, each with five captions describing the content of the image. The dataset provides a diverse set of images with multiple captions per image, making it suitable for training caption generation models.
+## **About the Dataset**
 
-Download the dataset from [Kaggle](https://www.kaggle.com/adityajn105/flickr8k) and organize the files as follows:
+This project uses the [Flickr8k dataset](https://www.kaggle.com/adityajn105/flickr8k), which contains:
 
-- flickr8k
-  - Images
-    - (image files)
-  - captions.txt
+- **8,091 images** with diverse content.
+- Each image is paired with **five captions** that describe the content in different ways.
 
-## Installation
-
-This project is written in Python 3.10.12. If you don't have Python installed, you can download it from the [official website](https://www.python.org/downloads/). If you have an older version of Python, you can upgrade it using the pip package manager, which should be already installed if you have Python 2 >=2.7.9 or Python 3 >=3.4 on your system.
-To install the required packages and libraries, you can use pip and the provided requirements.txt file. First, clone this repository to your local machine using the following command:
+### **Dataset Directory Structure**
 ```
-https://github.com/Sajid030/image-caption-generator.git
+flickr8k/
+    ├── Images/
+    │     ├── (image files)
+    ├── captions.txt
 ```
-Once you have cloned the repository, navigate to the project directory and run the following command in your terminal or command prompt:
-```bash
-pip install -r requirements.txt
-```
-This will install all the necessary packages and libraries needed to run the project.
 
-## Deployement on Streamlit
+To use the dataset, download it from the provided [Kaggle link](https://www.kaggle.com/adityajn105/flickr8k) and organize the files as shown above.
 
-1. Create an account on Streamlit Sharing.
+---
+
+## **Installation**
+
+### **Prerequisites**
+- Python 3.10 or higher is required.
+- Install all dependencies from the `requirements.txt` file.
+
+### **Steps to Install**
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/apekshachandak1/image_caption_generator.git
+   cd image_caption_generator
+   ```
+
+2. Install the required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Run the app:
+   ```bash
+   streamlit run app.py
+   ```
+
+---
+
+## **Deployment on Streamlit**
+
+To deploy this app on Streamlit:
+
+1. Create an account on [Streamlit Sharing](https://streamlit.io/).
 2. Fork this repository to your GitHub account.
-3. Log in to Streamlit Sharing and create a new app.
-4. Connect your GitHub account to Streamlit Sharing and select this repository.
-5. Set the following configuration variables in the Streamlit Sharing dashboard:
+3. Log in to Streamlit and create a new app.
+4. Configure the app:
+   ```
+   [server]
+   headless = true
+   port = $PORT
+   enableCORS = false
+   ```
+5. Deploy the app by linking the repository and clicking **Deploy App**.
+
+---
+
+## **Directory Tree**
+
 ```
-[server]
-headless = true
-port = $PORT
-enableCORS = false
-```
-6. Click on "Deploy app" to deploy the app on Streamlit Sharing.
-
-## Directory Tree
-
-```
-|   app.py
-|   image-captioner.ipynb
-|   LICENSE.md
-|   mymodel.h5
-|   README.md
-|   requirements.txt
-|   tokenizer.pkl
-\---resource
-        demo.gif
+image_caption_generator/
+    ├── app.py
+    ├── image-captioner.ipynb
+    ├── requirements.txt
+    ├── LICENSE
+    ├── tokenizer.pkl
+    ├── mymodel.h5
+    └── resource/
+        └── demo.gif
 ```
 
-## Bug / Feature Request
+---
 
-If you encounter any bugs or issues with the loan status predictor app, please let me know by opening an issue on my [GitHub repository](https://github.com/Sajid030/image-captioning/issues). Be sure to include the details of your query and the expected results. Your feedback is valuable in helping me improve the app for all users. Thank you for your support!
+## **Future Scope**
 
-## Future Scope
+1. **Beam Search Decoding**:
+   - Implement beam search for generating multiple captions and selecting the best one.
+   
+2. **Multilingual Support**:
+   - Extend the model to support caption generation in multiple languages using multilingual datasets.
+   
+3. **UI Improvements**:
+   - Enhance the Streamlit app by adding features like caption confidence scores and image previews.
+   
+4. **Dataset Expansion**:
+   - Train the model on larger datasets like [Flickr30k](https://www.kaggle.com/datasets/hsankesara/flickr-image-dataset) to improve caption diversity and complexity.
 
-1. **Fine-tuning**: Experiment with fine-tuning the captioning model architecture and hyperparameters for improved performance.
-2. **Dataset Expansion**: Incorporate additional datasets to increase the diversity and complexity of the trained model for example we can train the model on [Flickr30k dataset](https://www.kaggle.com/datasets/hsankesara/flickr-image-dataset).
-3. **Beam Search**: Implement beam search decoding for generating multiple captions and selecting the best one.
-4. **User Interface Enhancements**: Improve the Streamlit app's user interface and add features such as image previews and caption confidence scores.
-5. **Multilingual Captioning**: Extend the model to generate captions in multiple languages by incorporating multilingual datasets.
-=======
-# image_caption_generator
->>>>>>> 0f68177a8edb85091033f6798ae530c3165976eb
+5. **Model Optimization**:
+   - Explore other feature extraction models like **EfficientNet** for better performance-to-resource trade-offs.
+
+---
+
+## **Author**
+
+Developed with ❤️ by **[Apeksha Chandak](https://www.linkedin.com/in/apeksha-chandak/)**.
+
+Feel free to connect or reach out for collaboration opportunities!
